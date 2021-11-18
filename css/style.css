@@ -1,0 +1,153 @@
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background: #eef2f8;
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+.dashboard {
+    box-sizing: border-box;
+    padding: 32px;
+    display: grid;
+    grid-template-rows: 50px 1fr 1fr;
+    grid-template-columns: 3fr 9fr;
+    grid-template-areas: "header header header"
+                         "aside main main"
+                         "aside main main";
+    grid-gap: 32px;
+    height: 100vh;
+}
+
+header {
+    grid-area: header;
+    text-align: center;
+}
+
+aside {
+    grid-area: aside;
+}
+
+main {
+    grid-area: main;
+}
+
+.slice {
+    opacity: 1;
+    transition: all 150ms ease-in-out;
+}
+
+.slice:hover {
+    cursor: pointer;
+    opacity: 0.75;
+}
+
+#tooltip {
+    visibility: hidden;
+
+    position: absolute;
+
+    max-width: 100px;
+    padding: 10px 18px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(72, 149, 239, 0.2);
+    box-shadow: 0 3px 15px rgba(72, 149, 239, 0.2);
+
+    border-radius: 6px;
+
+    text-align: center;
+
+    transform: translateY(calc(-50% + 10px));
+}
+
+.chart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px 36px;
+    text-align: center;
+    background: #ffffff;
+    box-shadow: 0 3px 15px rgba(72, 149, 239, 0.2);
+    border-radius: 6px;
+}
+
+.chart-container h1 {
+    margin: 0 0 24px;
+}
+
+main.chart-container {
+    grid-row: span 2;
+}
+
+.beer-thumbnail {
+    display: block;
+    height: 50vh;
+    margin: 0 auto;
+}
+
+.beer-section h1 {
+    margin-bottom: 0;
+}
+
+.beer-section p {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.beer-section ul {
+    margin-top: 0;
+}
+
+.btn {
+    position: absolute;
+    bottom: 8px; right: 32px;
+    border: none;
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 30px 13px;
+    display: inline-block;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+    outline: none;
+    border-radius: 5px;
+    animation: breathing 5s ease-out infinite normal;
+}
+
+.btn:hover {
+    transition: padding-bottom 300ms;
+    padding-bottom: 10px;
+    animation-play-state: paused;
+}
+
+.btn-start {
+    background: linear-gradient(to right, #F5B648, #E7DE3F);
+    color: #fafafa;
+    transition: none;
+    z-index: 9999;
+}
+
+@keyframes breathing {
+    0% {
+        transform: translateY(-50%) translateX(0) rotate(-5deg) scale(0.9);
+    }
+
+    30% {
+        transform: translateY(-50%) translateX(0) rotate(-5deg) scale(1);
+    }
+
+    60% {
+        transform: translateY(-50%) translateX(0) rotate(-5deg) scale(0.9);
+    }
+
+    100% {
+        transform: translateY(-50%) translateX(0) rotate(-5deg) scale(0.9);
+    }
+}

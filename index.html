@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<button id="giveMeABeerPlease" class="btn btn-start">Show me another!</button>
+<div id="tooltip"></div>
+
+<div class="dashboard">
+
+    <header> <h1 id="beerTitleHeader"></h1> </header>
+
+    <article class="chart-container" id="maltChart">
+        <div class="content">
+            <h1>Different Malts</h1>
+            <svg class="pie" id="malt" height="200" width="200">
+                <g transform="translate(100, 100)"></g>
+            </svg>
+        </div>
+    </article>
+
+    <main class="chart-container">
+        <section class="beer-section">
+            <img src="#" alt="" class="beer-thumbnail" id="beerThumb">
+            <h1 id="beerTitle"></h1>
+            <p id="beerDesc"></p>
+            <ul>
+                <li id="beerSour"></li>
+                <li id="beerBrewed"></li>
+            </ul>
+        </section>
+    </main>
+
+    <article class="chart-container">
+        <div class="content">
+            <h1>Different Hops</h1>
+            <svg class="pie" id="hops" height="200" width="200">
+                <g transform="translate(100, 100)"></g>
+            </svg>
+        </div>
+    </article>
+
+</div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="js/main.js" type="module"></script>
+</body>
+</html>
