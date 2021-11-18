@@ -51,7 +51,7 @@ const initCreatePieChart = ({
          */
         d3.select(svgGroup)
             .selectAll('path')
-            .data(arcData)
+            .data(arcData, function(d) { return `${d.data.amount-d.data.name}` })
             .join('path')
             .classed('slice', true)
             .attr('fill', d => colorScale(d.data.amount))
